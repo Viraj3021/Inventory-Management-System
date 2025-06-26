@@ -32,12 +32,42 @@ export default function AddItemForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Add Item</h3>
-      <input name="name" placeholder="Item Name" value={form.name} onChange={handleChange} /><br />
-      <input name="price" placeholder="Price" type="number" value={form.price} onChange={handleChange} /><br />
-      <input name="itemTypeId" placeholder="Item Type ID" type="number" value={form.itemTypeId} onChange={handleChange} /><br />
-      <button type="submit">Add</button>
-    </form>
+    <form onSubmit={handleSubmit} className="add-item-form">
+  <h3>➕ Add New Item</h3>
+
+  <label>Item Name</label>
+  <input
+    name="name"
+    placeholder="Enter item name"
+    value={form.name}
+    onChange={handleChange}
+    required
+  />
+
+  <label>Price (₹)</label>
+  <input
+    name="price"
+    type="number"
+    placeholder="Enter price"
+    value={form.price}
+    onChange={handleChange}
+    min="0"
+    step="0.01"
+    required
+  />
+
+  <label>Item Type ID</label>
+  <input
+    name="itemTypeId"
+    type="number"
+    placeholder="Enter item type ID"
+    value={form.itemTypeId}
+    onChange={handleChange}
+    min="1"
+    required
+  />
+
+  <button type="submit">✅ Add Item</button>
+</form>
   );
 }

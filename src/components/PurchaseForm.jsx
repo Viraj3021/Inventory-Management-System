@@ -76,7 +76,7 @@ export default function PurchaseForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className=' purchase-form'>
       <h3>New Purchase</h3>
       <input
         type="text"

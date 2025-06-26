@@ -19,7 +19,7 @@ export default function PurchaseHistoryTable() {
   }, []);
 
   return (
-    <div>
+    <div className="purchase-history">
       <h3>🧾 Purchase History</h3>
       <table border="1" cellPadding="10">
         <thead>

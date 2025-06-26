@@ -51,27 +51,36 @@ export default function AddInventoryForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Add to Inventory</h3>
-      <select name="itemid" value={form.itemid} onChange={handleChange} required>
-        <option value="">Select Item</option>
-        {items.map((item) => (
-          <option key={item.itemid} value={item.itemid}>
-            {item.name}
-          </option>
-        ))}
-      </select>
+    <form onSubmit={handleSubmit} className="add-inventory-form">
+  <h3>📦 Add to Inventory</h3>
 
-      <input
-        name="stockavailable"
-        type="number"
-        placeholder="Quantity"
-        value={form.stockavailable}
-        onChange={handleChange}
-        required
-      />
+  <label>Item</label>
+  <select
+    name="itemid"
+    value={form.itemid}
+    onChange={handleChange}
+    required
+  >
+    <option value="">-- Select Item --</option>
+    {items.map((item) => (
+      <option key={item.itemid} value={item.itemid}>
+        {item.name}
+      </option>
+    ))}
+  </select>
 
-      <button type="submit">Add Stock</button>
-    </form>
+  <label>Quantity</label>
+  <input
+    name="stockavailable"
+    type="number"
+    placeholder="Enter quantity"
+    value={form.stockavailable}
+    onChange={handleChange}
+    min="1"
+    required
+  />
+
+  <button type="submit">➕ Add Stock</button>
+</form>
   );
 }
