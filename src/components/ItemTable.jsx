@@ -75,7 +75,7 @@ export default function ItemTable() {
                     }
                   />
                 </td>
-                <td>{item.itemtypeid}</td>
+                <td>{item.itemTypeId}</td>
                 <td>
                   <button onClick={handleUpdate}>💾 Save</button>
                   <button onClick={() => setEditItem(null)}>❌ Cancel</button>
